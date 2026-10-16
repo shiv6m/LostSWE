@@ -18,8 +18,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Lost<span className="text-indigo-400">SWE</span>
             </Link>
             <div className="flex gap-6 text-sm text-neutral-300">
-              <Link href="/quiz" className="hover:text-white">Quiz</Link>
-              <Link href="/library" className="hover:text-white">Library</Link>
+              <Link href="/quiz" className="hover:text-white">
+                Quiz
+              </Link>
+              <Link href="/library" className="hover:text-white">
+                Library
+              </Link>
             </div>
           </nav>
         </header>

@@ -38,10 +38,7 @@ export default function QuizPage() {
     >
       <div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-neutral-800">
-          <div
-            className="h-full bg-indigo-500 transition-all"
-            style={{ width: `${progress}%` }}
-          />
+          <div className="h-full bg-indigo-500 transition-all" style={{ width: `${progress}%` }} />
         </div>
         <p className="mt-2 text-xs text-neutral-500">
           Question {step + 1} of {QUIZ_QUESTIONS.length}
@@ -66,10 +63,7 @@ export default function QuizPage() {
       </div>
 
       {step > 0 && (
-        <button
-          onClick={goBack}
-          className="text-sm text-neutral-500 hover:text-neutral-300"
-        >
+        <button onClick={goBack} className="text-sm text-neutral-500 hover:text-neutral-300">
           ← Back
         </button>
       )}

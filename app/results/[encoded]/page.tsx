@@ -4,11 +4,7 @@ import { decodeAnswers, rankFields } from "@/lib/quiz";
 // Results are derived entirely from the URL segment, so a result link is
 // shareable without any server-side storage — exactly the Oct 30 roadmap
 // requirement ("result encoded in the URL so it can be shared").
-export default async function ResultsPage({
-  params,
-}: {
-  params: Promise<{ encoded: string }>;
-}) {
+export default async function ResultsPage({ params }: { params: Promise<{ encoded: string }> }) {
   const { encoded } = await params;
   const answers = decodeAnswers(decodeURIComponent(encoded));
   const ranked = rankFields(answers).slice(0, 3);

@@ -16,8 +16,14 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: "q1",
     prompt: "A project is more satisfying when it ends with...",
     options: [
-      { label: "Something people can see and use immediately", weights: { visual: 1, creative: 1 } },
-      { label: "A system that quietly keeps working under load", weights: { systems: 1, analytical: 1 } },
+      {
+        label: "Something people can see and use immediately",
+        weights: { visual: 1, creative: 1 },
+      },
+      {
+        label: "A system that quietly keeps working under load",
+        weights: { systems: 1, analytical: 1 },
+      },
       { label: "A clear answer backed by data", weights: { analytical: 1, math: 1 } },
       { label: "Someone else learning something from it", weights: { people: 1 } },
     ],
@@ -26,8 +32,14 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: "q2",
     prompt: "When you're stuck on a bug, you usually...",
     options: [
-      { label: "Sketch the data flow until the mismatch is visible", weights: { visual: 1, systems: 1 } },
-      { label: "Write a quick experiment to isolate the variable", weights: { analytical: 1, math: 1 } },
+      {
+        label: "Sketch the data flow until the mismatch is visible",
+        weights: { visual: 1, systems: 1 },
+      },
+      {
+        label: "Write a quick experiment to isolate the variable",
+        weights: { analytical: 1, math: 1 },
+      },
       { label: "Ask someone to rubber-duck it with you", weights: { people: 1 } },
       { label: "Try a few creative workarounds first", weights: { creative: 1 } },
     ],
@@ -48,7 +60,10 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: [
       { label: "Building a tiny app or game for fun", weights: { creative: 1, visual: 1 } },
       { label: "Reading about how a real system (DB, OS, network) works", weights: { systems: 1 } },
-      { label: "Poking at a public dataset to see what's in it", weights: { analytical: 1, math: 1 } },
+      {
+        label: "Poking at a public dataset to see what's in it",
+        weights: { analytical: 1, math: 1 },
+      },
       { label: "Helping a friend debug their code", weights: { people: 1 } },
     ],
   },
@@ -56,8 +71,14 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: "q5",
     prompt: "Which failure mode would bother you more?",
     options: [
-      { label: "A UI that's technically correct but ugly and confusing", weights: { visual: 1, creative: 1 } },
-      { label: "A service that works until it suddenly doesn't, at scale", weights: { systems: 1 } },
+      {
+        label: "A UI that's technically correct but ugly and confusing",
+        weights: { visual: 1, creative: 1 },
+      },
+      {
+        label: "A service that works until it suddenly doesn't, at scale",
+        weights: { systems: 1 },
+      },
       { label: "A conclusion based on sloppy statistics", weights: { analytical: 1, math: 1 } },
       { label: "A tool nobody can figure out how to use without help", weights: { people: 1 } },
     ],

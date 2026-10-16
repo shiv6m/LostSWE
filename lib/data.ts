@@ -4,13 +4,7 @@
 // ("feat(content): typed content schema") splits this into per-field files
 // validated by zod; until then, the shapes below are the contract.
 
-export type TraitId =
-  | "visual"
-  | "analytical"
-  | "people"
-  | "systems"
-  | "creative"
-  | "math";
+export type TraitId = "visual" | "analytical" | "people" | "systems" | "creative" | "math";
 
 export interface Trait {
   id: TraitId;
@@ -19,21 +13,39 @@ export interface Trait {
 }
 
 export const TRAITS: Trait[] = [
-  { id: "visual", label: "Visual thinking", description: "You reason better with diagrams, layouts, and things you can see." },
-  { id: "analytical", label: "Analytical", description: "You enjoy breaking a problem into parts and finding the pattern." },
-  { id: "people", label: "People-facing", description: "You like work that involves explaining, teaching, or collaborating directly." },
-  { id: "systems", label: "Systems thinking", description: "You like understanding how pieces of a large system fit together." },
-  { id: "creative", label: "Creative", description: "You're drawn to building things that didn't exist before, with room for taste." },
-  { id: "math", label: "Math-heavy", description: "You like work grounded in formal reasoning and quantitative rigor." },
+  {
+    id: "visual",
+    label: "Visual thinking",
+    description: "You reason better with diagrams, layouts, and things you can see.",
+  },
+  {
+    id: "analytical",
+    label: "Analytical",
+    description: "You enjoy breaking a problem into parts and finding the pattern.",
+  },
+  {
+    id: "people",
+    label: "People-facing",
+    description: "You like work that involves explaining, teaching, or collaborating directly.",
+  },
+  {
+    id: "systems",
+    label: "Systems thinking",
+    description: "You like understanding how pieces of a large system fit together.",
+  },
+  {
+    id: "creative",
+    label: "Creative",
+    description: "You're drawn to building things that didn't exist before, with room for taste.",
+  },
+  {
+    id: "math",
+    label: "Math-heavy",
+    description: "You like work grounded in formal reasoning and quantitative rigor.",
+  },
 ];
 
-export type FieldId =
-  | "frontend"
-  | "backend"
-  | "data-science"
-  | "ml-ai"
-  | "security"
-  | "embedded";
+export type FieldId = "frontend" | "backend" | "data-science" | "ml-ai" | "security" | "embedded";
 
 export interface RoadmapPhase {
   title: string;
@@ -61,17 +73,20 @@ export const FIELDS: Field[] = [
     roadmap: [
       {
         title: "Foundations",
-        description: "HTML, CSS, and JavaScript fundamentals; build three static pages from scratch.",
+        description:
+          "HTML, CSS, and JavaScript fundamentals; build three static pages from scratch.",
         resourceIds: ["mdn-web-docs", "cs50"],
       },
       {
         title: "Framework fluency",
-        description: "Learn React or a comparable framework; build a small app with routing and state.",
+        description:
+          "Learn React or a comparable framework; build a small app with routing and state.",
         resourceIds: ["react-docs", "fullstackopen"],
       },
       {
         title: "Production depth",
-        description: "Accessibility, performance budgets, testing, and a deployed portfolio project.",
+        description:
+          "Accessibility, performance budgets, testing, and a deployed portfolio project.",
         resourceIds: ["web-dev-google", "frontend-masters-free"],
       },
     ],
@@ -111,7 +126,8 @@ export const FIELDS: Field[] = [
     roadmap: [
       {
         title: "Foundations",
-        description: "Python, pandas, and statistics fundamentals; clean and explore a real dataset.",
+        description:
+          "Python, pandas, and statistics fundamentals; clean and explore a real dataset.",
         resourceIds: ["kaggle-learn", "cs50"],
       },
       {
@@ -121,7 +137,8 @@ export const FIELDS: Field[] = [
       },
       {
         title: "Production depth",
-        description: "Experiment design, SQL at scale, and a portfolio case study with real stakes.",
+        description:
+          "Experiment design, SQL at scale, and a portfolio case study with real stakes.",
         resourceIds: ["designing-data-intensive-apps", "kaggle-learn"],
       },
     ],
@@ -136,7 +153,8 @@ export const FIELDS: Field[] = [
     roadmap: [
       {
         title: "Foundations",
-        description: "Linear algebra, probability, and Python; implement linear regression from scratch.",
+        description:
+          "Linear algebra, probability, and Python; implement linear regression from scratch.",
         resourceIds: ["fast-ai", "cs50"],
       },
       {
@@ -171,7 +189,8 @@ export const FIELDS: Field[] = [
       },
       {
         title: "Production depth",
-        description: "Threat modeling, a real bug bounty submission, and secure-by-default code review.",
+        description:
+          "Threat modeling, a real bug bounty submission, and secure-by-default code review.",
         resourceIds: ["owasp-top-ten", "roadmap-security"],
       },
     ],
@@ -186,12 +205,14 @@ export const FIELDS: Field[] = [
     roadmap: [
       {
         title: "Foundations",
-        description: "C fundamentals and basic electronics; blink an LED on a real microcontroller.",
+        description:
+          "C fundamentals and basic electronics; blink an LED on a real microcontroller.",
         resourceIds: ["cs50", "embedded-rust-book"],
       },
       {
         title: "Framework fluency",
-        description: "Interrupts, timers, and communication protocols (I2C, SPI, UART) on a dev board.",
+        description:
+          "Interrupts, timers, and communication protocols (I2C, SPI, UART) on a dev board.",
         resourceIds: ["embedded-rust-book", "roadmap-backend"],
       },
       {
@@ -212,20 +233,104 @@ export interface Resource {
 }
 
 export const RESOURCES: Resource[] = [
-  { id: "cs50", title: "CS50: Introduction to Computer Science (Harvard/edX)", url: "https://cs50.harvard.edu/x/", free: true, lastReviewed: "2026-10-01" },
-  { id: "mdn-web-docs", title: "MDN Web Docs", url: "https://developer.mozilla.org/", free: true, lastReviewed: "2026-10-01" },
-  { id: "react-docs", title: "React — Official Documentation", url: "https://react.dev/", free: true, lastReviewed: "2026-10-01" },
-  { id: "fullstackopen", title: "Full Stack Open (University of Helsinki)", url: "https://fullstackopen.com/en/", free: true, lastReviewed: "2026-10-01" },
-  { id: "web-dev-google", title: "web.dev (Google)", url: "https://web.dev/", free: true, lastReviewed: "2026-10-01" },
-  { id: "frontend-masters-free", title: "Frontend Masters — Free Courses", url: "https://frontendmasters.com/learn/free/", free: true, lastReviewed: "2026-10-01" },
-  { id: "roadmap-backend", title: "roadmap.sh — Backend Roadmap", url: "https://roadmap.sh/backend", free: true, lastReviewed: "2026-10-01" },
-  { id: "designing-data-intensive-apps", title: "Designing Data-Intensive Applications (reference text)", url: "https://dataintensive.net/", free: false, lastReviewed: "2026-10-01" },
-  { id: "kaggle-learn", title: "Kaggle Learn", url: "https://www.kaggle.com/learn", free: true, lastReviewed: "2026-10-01" },
-  { id: "fast-ai", title: "fast.ai — Practical Deep Learning", url: "https://course.fast.ai/", free: true, lastReviewed: "2026-10-01" },
-  { id: "overthewire", title: "OverTheWire — Wargames", url: "https://overthewire.org/wargames/", free: true, lastReviewed: "2026-10-01" },
-  { id: "owasp-top-ten", title: "OWASP Top Ten", url: "https://owasp.org/www-project-top-ten/", free: true, lastReviewed: "2026-10-01" },
-  { id: "roadmap-security", title: "roadmap.sh — Cyber Security Roadmap", url: "https://roadmap.sh/cyber-security", free: true, lastReviewed: "2026-10-01" },
-  { id: "embedded-rust-book", title: "The Embedded Rust Book", url: "https://docs.rust-embedded.org/book/", free: true, lastReviewed: "2026-10-01" },
+  {
+    id: "cs50",
+    title: "CS50: Introduction to Computer Science (Harvard/edX)",
+    url: "https://cs50.harvard.edu/x/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "mdn-web-docs",
+    title: "MDN Web Docs",
+    url: "https://developer.mozilla.org/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "react-docs",
+    title: "React — Official Documentation",
+    url: "https://react.dev/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "fullstackopen",
+    title: "Full Stack Open (University of Helsinki)",
+    url: "https://fullstackopen.com/en/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "web-dev-google",
+    title: "web.dev (Google)",
+    url: "https://web.dev/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "frontend-masters-free",
+    title: "Frontend Masters — Free Courses",
+    url: "https://frontendmasters.com/learn/free/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "roadmap-backend",
+    title: "roadmap.sh — Backend Roadmap",
+    url: "https://roadmap.sh/backend",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "designing-data-intensive-apps",
+    title: "Designing Data-Intensive Applications (reference text)",
+    url: "https://dataintensive.net/",
+    free: false,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "kaggle-learn",
+    title: "Kaggle Learn",
+    url: "https://www.kaggle.com/learn",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "fast-ai",
+    title: "fast.ai — Practical Deep Learning",
+    url: "https://course.fast.ai/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "overthewire",
+    title: "OverTheWire — Wargames",
+    url: "https://overthewire.org/wargames/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "owasp-top-ten",
+    title: "OWASP Top Ten",
+    url: "https://owasp.org/www-project-top-ten/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "roadmap-security",
+    title: "roadmap.sh — Cyber Security Roadmap",
+    url: "https://roadmap.sh/cyber-security",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
+  {
+    id: "embedded-rust-book",
+    title: "The Embedded Rust Book",
+    url: "https://docs.rust-embedded.org/book/",
+    free: true,
+    lastReviewed: "2026-10-01",
+  },
 ];
 
 export function getField(id: string): Field | undefined {

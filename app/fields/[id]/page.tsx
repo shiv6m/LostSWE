@@ -8,11 +8,7 @@ export function generateStaticParams() {
   return FIELDS.map((field) => ({ id: field.id }));
 }
 
-export default async function FieldPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function FieldPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const field = getField(id);
   if (!field) notFound();
@@ -29,17 +25,13 @@ export default async function FieldPage({
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-sm font-medium uppercase tracking-wide text-neutral-500">
-          Roadmap
-        </h2>
+        <h2 className="text-sm font-medium uppercase tracking-wide text-neutral-500">Roadmap</h2>
         {field.roadmap.map((phase, i) => {
           const resources = getResourcesByIds(phase.resourceIds);
           return (
             <div key={phase.title} className="rounded-lg border border-neutral-800 p-5">
               <div className="flex items-baseline gap-3">
-                <span className="text-xs font-semibold text-indigo-400">
-                  PHASE {i + 1}
-                </span>
+                <span className="text-xs font-semibold text-indigo-400">PHASE {i + 1}</span>
                 <h3 className="font-semibold text-white">{phase.title}</h3>
               </div>
               <p className="mt-2 text-sm text-neutral-400">{phase.description}</p>

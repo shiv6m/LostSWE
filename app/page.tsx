@@ -13,8 +13,8 @@ export default function HomePage() {
           Not sure which CS field is yours?
         </h1>
         <p className="mx-auto max-w-xl text-neutral-400">
-          Take a 2-minute quiz, see which fields fit how you think, and get a free
-          roadmap to go from beginner to job-ready — curated, not generated.
+          Take a 2-minute quiz, see which fields fit how you think, and get a free roadmap to go
+          from beginner to job-ready — curated, not generated.
         </p>
         <Link
           href="/quiz"
